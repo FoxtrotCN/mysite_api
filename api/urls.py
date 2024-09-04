@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import hello_word
+from .views import get_all_notes
 
 
 urlpatterns = [
-    path('hello/', hello_word, name='hello_word')
+    path('notes/', get_all_notes, name='get_all_notes')
 ]

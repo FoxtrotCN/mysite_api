@@ -1,5 +1,8 @@
 from django.http import JsonResponse
+from .models import Note
 
 
-def hello_word(request):
-    return JsonResponse({'message': 'Hello, word!'})
+def get_all_notes(request):
+    notes = Note.objects.all()
+    notes_list = list(notes.values())
+    return JsonResponse(notes_list, safe=False)
